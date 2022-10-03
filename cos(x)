@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            float x = 0.25f;
+            float sum = 1;
+            float stepx = 1;
+            float fact = 1;
+            float k = 1;
+            float nek=2;
+            int i = 0, roundd = 2;
+            while (Math.Round(Math.Cos(x) * Math.Cos(x),roundd) != Math.Round(sum, roundd))
+            {
+                k *= -1;
+                stepx *= (x*x);
+                i++;
+                
+                fact *= 2*i;
+                sum += (k * nek * stepx) / (fact);
+                nek *= 4;
+            }
+            Console.WriteLine($"{Math.Round(Math.Cos(x) * Math.Cos(x),2)}, {Math.Round(sum,2)}");
+            Console.ReadKey();
+        }
+    }
+}
